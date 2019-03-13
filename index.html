@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>琪洋 love 娜瑩</title>
+    <!--<script src="./bootstrap-4.0.0-dist/js/bootstrap.min.js"-->
+    <!--integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"-->
+    <!--crossorigin="anonymous"></script>-->
+    <!--<link rel="stylesheet" href="./bootstrap-4.0.0-dist/css/bootstrap.min.css"-->
+    <!--integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <style>
+        .warp {
+            width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .photo {
+            width: 1280px;
+        }
+
+        .sButton {
+            width: 1280px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .modal-dialog {
+            max-width: 700px;
+        }
+
+        *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: radial-gradient(mintcream 0%, lightgray 100%);;
+        }
+
+        .Container {
+            margin: 15% auto;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        #carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotation 10s infinite linear;
+        }
+
+        #carousel figure {
+            display: block;
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            left: 10px;
+            top: 10px;
+            background: black;
+            overflow: hidden;
+            border: solid 5px black;
+        }
+
+        img {
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            width: 100%;
+            height: 100%;
+        }
+
+        span {
+            font-size: 26px;
+        }
+
+        #carousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(2) {
+            transform: rotateY(30deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(3) {
+            transform: rotateY(60deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(4) {
+            transform: rotateY(90deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(5) {
+            transform: rotateY(120deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(6) {
+            transform: rotateY(150deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(7) {
+            transform: rotateY(180deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(8) {
+            transform: rotateY(210deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(9) {
+            transform: rotateY(240deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(10) {
+            transform: rotateY(270deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(11) {
+            transform: rotateY(300deg) translateZ(566px);
+        }
+
+        #carousel figure:nth-child(12) {
+            transform: rotateY(330deg) translateZ(566px);
+        }
+
+        #tag {
+            width: 650px;
+            height: 650px;
+        }
+
+        .stopDiv {
+            display: inline-block;
+            margin-top: 100px;
+        }
+
+        .ball_box {
+            width: 700px;
+            height: 700px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ball {
+            margin-left: 10px;
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            float: left;
+            line-height: 55px;
+            display: inline-block;
+            background: rgb(253, 179, 17);
+            vertical-align: top;
+        }
+
+        .ball_no {
+            display: block;
+            color: #000;
+            font-size: 38px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+        }
+
+        .ball_title {
+            font-size: 42px;
+            background: #218838;
+            padding: 15px
+        }
+
+        .balls {
+            background: #f5c6cb;
+            padding: 15px
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div class="photo">
+        <div class="Container">
+            <div id="carousel">
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+                <figure><img src="" alt=""></figure>
+            </div>
+        </div>
+    </div>
+    <div class="sButton container text-center">
+        <div class="row align-items-end stopDiv">
+            <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModal"
+                    onclick="stop()"
+                    type="submit"><span>Ｓ大普</span>
+            </button>
+        </div>
+    </div>
+    <div class="ball_box container">
+        <div class="row">
+            <div class="col-2 ball_title" data-toggle="modal" data-target="#appendModal" onclick="stop()">
+                已選號碼
+            </div>
+            <div class="col-10 balls" id="ballPool">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="appendModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                手動添加...中....
+            </div>
+            <div class="modal-footer">
+                <input type="number" id="number2" min="1" max="" required="required" class="form-control col-4"
+                       id="pickNo2"
+                       placeholder="挑個號碼吧！">
+                <button type="submit" onclick="saveNo('number2')" class="submit btn btn-primary">送出</button>
+            </div>
+            <div class="alert alert-danger alert-dismissible show" role="alert">
+                <strong>我覺得不行！</strong> 號碼看起來不對
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">恭喜老爺!!賀喜夫人!!祝您中大獎!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="tag" src="" alt="">
+            </div>
+            <div class="modal-footer">
+                <input type="number" id="number" min="1" max="" required="required" class="form-control col-4"
+                       id="pickNo"
+                       placeholder="挑個號碼吧！">
+                <button type="submit" onclick="saveNo('number')" class="submit btn btn-primary">送出</button>
+            </div>
+            <div class="alert alert-danger alert-dismissible show" role="alert">
+                <strong>我覺得不行！</strong> 號碼看起來不對
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script>
+    var noMax = 41;
+    var pool = [];
+    var pick = [];
+    var loto = [];
+    for (size = 1; size <= noMax; size++) {
+        pool.push(size);
+    }
+    $('.alert').hide();
+
+    rePhoto();
+
+    function rePhoto() {
+        var cycSize = (pool.length <= 12) ? pool.length : 12;
+        var cyc = shuffle(pool, cycSize);
+        var ans = shuffle(cyc, 1)[0];
+        pick.push(ans);
+        cutItem(pool, ans);
+        for (var i = 1; i <= 12; i++) {
+            var element = (cyc[i - 1] === undefined) ? 0 : cyc[i - 1];
+            $("#carousel figure:nth-child(" + i + ") img").attr('src', "./photo/" + element + ".jpg");
+        }
+        $("#tag").attr('src', "./photo/" + ans + ".jpg");
+    }
+
+    function stop() {
+        $("#carousel").css("animation-play-state", "paused");
+    }
+
+
+    function shuffle(arr, pickSize) {
+        var tmpArr = arr.slice();
+        pickSize = pickSize || tmpArr.length - 1;
+        var temp = [];
+        for (var i = 1; i <= pickSize; i++) {
+            var cutNo = Math.floor(Math.random() * tmpArr.length);
+            var pickVal = tmpArr[cutNo];
+            temp.push(pickVal);
+            cutItem(tmpArr, pickVal);
+        }
+        return temp;
+    };
+
+    function cutItem(arr, pickVal) {
+        var index = arr.indexOf(pickVal);
+        if (index > -1) {
+            arr.splice(index, 1);
+        }
+    }
+
+    function saveNo(id) {
+        inputNo = $('#' + id).val();
+        console.log(inputNo);
+        if (0 < inputNo && inputNo <= 49 && loto.indexOf(inputNo) === -1) {
+            loto.push(inputNo);
+            $('#appendModal').modal('hide');
+            $('#myModal').modal('hide');
+            $('.alert').hide();
+            $('#number').val("");
+            reNoPool();
+        } else {
+            $('#number').focus();
+            $('.alert').show();
+        }
+    }
+
+    function reNoPool() {
+        $('#ballPool').html("");
+        loto.forEach(function (val) {
+            $('#ballPool').append("<span class='ball' onclick='delNo(" + val + ")'><span class='ball_no'>" + val + "</span></span>");
+        });
+    }
+
+    function delNo(no) {
+        cutItem(loto, no.toString());
+        reNoPool();
+    }
+
+    $("#myModal").on("show.bs.modal", function () {
+        if (event.keyCode == "13") {
+            $('.submit').click()
+        }
+    });
+    $("#appendModal").on("show.bs.modal", function () {
+        if (event.keyCode == "13") {
+            $('.submit').click()
+        }
+    });
+
+    $("#myModal").on("hidden.bs.modal", function () {
+        $("#carousel").css("animation", "rotation 10s infinite linear");
+        rePhoto();
+    });
+    $("#appendModal").on("hidden.bs.modal", function () {
+        $("#carousel").css("animation", "rotation 10s infinite linear");
+        rePhoto();
+    });
+</script>
+
+</html>
